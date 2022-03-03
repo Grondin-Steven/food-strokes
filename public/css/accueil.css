@@ -1,0 +1,227 @@
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+
+/* CSS NavBar */
+
+.navbar-collapse {
+  margin-left: 734px;
+}
+
+.nav-item {
+  padding-right: 27px;
+}
+
+.navbar {
+  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+}
+
+
+
+/* Ecrivez ici votre commentaire CSS */
+
+  .btn-login {
+    border: 1px solid black;
+    width: 110px;
+    border-radius: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .btn-login:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  }
+
+  #logo {
+    width: 127px;
+    margin-top: 90px;
+  }
+
+  .img-main {
+    width: -webkit-fill-available;
+    margin-top: -59px;
+  } 
+  
+  .bloc-two {
+    height: 1424px;
+    background-color: rgb(255, 255, 255);
+    margin-top: -490px;
+    z-index: 2;
+    position: relative;
+    padding-top: 225px;
+  }
+
+.hr-green {
+  color: #2E933C;
+  border: 2px solid;
+  width: 320px;
+}
+
+.hr-top {
+  margin-top: 105px !important;
+}
+
+hr.divider {
+  height: 0.2rem;
+  max-width: 3.25rem;
+  margin: 1.5rem auto;
+  background-color: #30bb30;
+  opacity: 1;
+}
+
+.title-presentation-restau {
+  color: #FF3800;
+  margin-top: -21px;
+  padding-bottom: 37px;
+  font-size: 24px;
+  padding: 0;
+}
+
+.title-presentation-dishes {
+  color: black;
+  font-size: 24px;
+}
+
+.carousel-img {
+  margin-top: 97px;
+}
+
+.blocs {
+  display: flex;
+}
+
+/* bloc card reservation */
+
+.reservation-card .container {
+  margin-left: 36px;
+}
+
+.reservation-card {
+  background-color: rgb(255 255 255 / 94%);
+  height: 405px;
+  width: 580px;
+  margin-top: -680px;
+  z-index: 999;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-left: 250px;
+  border-radius: 2px;
+}
+
+.slogan-card {
+  font-size: 19px;
+  padding-bottom: 13px;
+}
+
+.label-title {
+  font-size: 14px;
+}
+
+.form-people {
+  border: 1px solid#dfdfdf;;
+}
+
+.form-input {
+  border: 1px solid#dfdfdf;;
+  width: 230px;
+  height: 48px;
+  padding-bottom: 20px;
+}
+
+.form-input::placeholder {
+  color: #C5C5C5;
+  font-size: 12px;
+}
+
+.form-input:focus {
+  color: rgb(116, 116, 116);
+}
+
+.btn-reservation {
+  background: linear-gradient(90deg, rgb(244, 96, 54), rgb(211 40 56));
+  color: white;
+  border-radius: 0px;
+  width: 197px;
+  height: 43px;
+}
+
+.bx-right-arrow-alt {
+  font-size: 25px;
+}
+
+.form-date {
+  margin-left: 104px;
+}
+
+.form-time {
+  margin-left: 23px;
+}
+
+/* Bloc card avis */
+
+.avis-card {
+  background-color: rgb(255 255 255 / 100%);
+  height: 165px;
+  width: 300px;
+  margin-top: -527px;
+  z-index: 999;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-left: 130px;
+}
+
+.date-avis {
+  color: #4A4949;
+}
+
+.citation-avis-people {
+  color: #5D5B5B;
+}
+
+.text-avis-size {
+  font-size: 13px;
+}
+
+/* Media Query responsive */
+@media (max-width: 991.98px) {
+
+  .nav-item {
+    padding-right: 0px;
+}
+
+  .navbar-collapse {
+    margin-left: 0px;
+  }
+
+    .img-main {
+    margin-top: 80px;
+  }
+
+    .reservation-card {
+    margin-top: -162px;
+    margin-left: 0;
+    height: 568px;
+    width: auto;
+  }
+
+    .bloc-two {
+    height: 690px;
+    padding-top: 20px;
+    margin-top: 70px;
+  }
+
+  .reservation-card .container {
+    margin-left: 0;
+}
+
+  .blocs {
+    display: block;
+  }
+
+  .avis-card {
+    margin-left: 0;
+    margin-top: 0;
+    margin: auto;
+  }
+
+}
