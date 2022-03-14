@@ -2,27 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DailyspecialsModel;
 use Illuminate\Http\Request;
 
 class ViewControllers extends Controller
 {
-    public function home() {
-        return view('home');
+    public function home(Request $request)
+    {
+        $dailyspecials = DailyspecialsModel::get();
+        return view('home', ["user"=>$request->session()->get("user")], ['dailyspecials' => $dailyspecials]);
     }
 
-    public function connexion() {
-        return view('connexion');
+    public function registration(Request $request)
+    {
+        return view('registration', ["user"=>$request->session()->get("user")]);
     }
 
-    public function registration() {
-        return view('registration');
-    }
-
-    public function account() {
+    public function account()
+    {
         return view('account');
     }
 
-    public function legal() {
+    public function legal()
+    {
         return view('legal');
     }
 }

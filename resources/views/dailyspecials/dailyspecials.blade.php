@@ -1,39 +1,34 @@
-@extends('layouts.main')
+@extends('layouts.mainAdmin')
 
 @section('main')
-@foreach ($dailyspecials as $dailyspecial)
 
-<h1 style="margin-top: 100px"></h1>
+    {{-- ce include c'est le button modal --}}
+    @include('components.formPlats')
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Picture</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>{{ $dailyspecial->title }}</td>
-        <td>{{ $dailyspecial->description }}</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-    
-@endforeach
+    <!-- Table d'affichage des données -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Picture</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach ($dailyspecials as $dailyspecial)
+                    <th scope="row">{{ $dailyspecial->id }}</th>
+                    <td>{{ $dailyspecial->title }}</td>
+                    <td>{{ $dailyspecial->description }}</td>
+                    <td>{{ $dailyspecial->picture }}</td>
+                    <td>
+                        @include('components.formPlats',["plat"=>$dailyspecial])
+                        @include('components.deleteplat', ["id"=>$dailyspecial->id])
+                    </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection

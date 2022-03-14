@@ -12,11 +12,45 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!-- CCS et JS local -->
     <link rel="stylesheet" href="/css/accueil.css">
     <script src="assets/js/script.js"></script>
     <!-- icons de boxicons.com -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Food Strokes</title>
+
+
+
+    <style>
+        #scrollUp
+        {
+        position: fixed;
+        bottom : 10px;
+        right: -100px;
+        opacity: 0.5;
+        }
+        </style>
+         
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+         
+        <script>
+                    jQuery(function(){
+                        $(function () {
+                            $(window).scroll(function () {
+                                if ($(this).scrollTop() > 200 ) { 
+                                    $('#scrollUp').css('right','10px');
+                                } else { 
+                                    $('#scrollUp').removeAttr( 'style' );
+                                }
+         
+                            });
+                        });
+                    });
+        </script>
+
+
+
+
 </head>

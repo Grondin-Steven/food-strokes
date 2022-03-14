@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DailyspecialsModel extends Model
+class ReservationModel extends Model
 {
     use HasFactory;
-    protected $table = 'dailyspecials';
+    protected $table = 'reservations';
     public $timestamps = false;
 
-    public function dailyspecials()
+    public function reservation()
     {
-        return $this->belongsTo(DailyspecialsModel::class);
+        return $this->belongsTo(ReservationModel::class);
     }
 }

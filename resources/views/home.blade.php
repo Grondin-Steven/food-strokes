@@ -10,7 +10,7 @@
     @include('sections.formres')
 
     <!-- Petit bloc d'avis -->
-    <div class="avis-card" data-aos="fade-up" data-aos-duration="1000">
+    <div class="avis-card" data-aos="zoom-in" data-aos-duration="1200">
         <div class="container text-avis-size">
             <p class="text-end mt-3"><i class='bx bx-calendar'></i><span class="date-avis">02/12/21</span></p>
             <p class="name-avis-people"><img src="/img/icons/ui-face.png" width="32px" class="mr-1 ml-1 "
@@ -31,6 +31,5 @@
 
         @include('sections.presentation')
         @include('sections.dailyspecials')
-        <p>{{ $dailyspecial->title }}</p>
     </div>
 @endsection

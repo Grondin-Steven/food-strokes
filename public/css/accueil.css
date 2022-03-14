@@ -43,7 +43,7 @@ body {
   } 
   
   .bloc-two {
-    height: 1424px;
+    height: 1680px;
     background-color: rgb(255, 255, 255);
     margin-top: -490px;
     z-index: 2;
@@ -88,6 +88,10 @@ hr.divider {
 
 .blocs {
   display: flex;
+}
+
+.card-title {
+  font-weight: 200;
 }
 
 /* bloc card reservation */
@@ -182,11 +186,23 @@ hr.divider {
   font-size: 13px;
 }
 
+.read-dailyspecials {
+  display: flex;
+}
+
 /* Media Query responsive */
 @media (max-width: 991.98px) {
 
   .nav-item {
     padding-right: 0px;
+}
+
+.read-dailyspecials {
+  display: block;
+}
+
+.img-dailyspecials {
+  margin-left: 12px;
 }
 
   .navbar-collapse {
@@ -205,7 +221,7 @@ hr.divider {
   }
 
     .bloc-two {
-    height: 690px;
+    height: 1988px;
     padding-top: 20px;
     margin-top: 70px;
   }

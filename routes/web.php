@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminControllers;
+use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\ClientsControllers;
 use App\Http\Controllers\DailyspecialsControllers;
+use App\Http\Controllers\ReservationControllers;
 use App\Http\Controllers\ViewControllers;
 use Illuminate\Support\Facades\Route;
 
@@ -16,68 +19,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-                //           FRONT OFFICE             //
-
-
 // ROUTE POUR LA PAGE D'ACCUEIL
-Route::get('/', [ViewControllers::class, 'home']);
+Route::get('/', [ViewControllers::class, 'home'])->name('home');
 
 // PAGE CONNEXION
-Route::get('/connexion',[ViewControllers::class, 'connexion'] );
+Route::middleware('user')->group(function () {
+});
+//  GESTION PLATS DU JOUR (BACK OFFICE) // yes
+
+Route::get('/admin/dailyspecials', [DailyspecialsControllers::class, 'index'])->name('dailyspecials');
+Route::post('/admin/dailyspecials', [DailyspecialsControllers::class, 'add']);
+Route::post('/admin/dailyspecials/delete/{id}', [DailyspecialsControllers::class, 'delete']);
+Route::post('/admin/dailyspecials/{id}', [DailyspecialsControllers::class, 'update']);
+
+
+// GESTION DES RESERVATIONS (BACK OFFICE) // yes
+
+Route::get('/admin/reservations', [ReservationControllers::class, 'index'])->name('reservations');
+Route::post('/admin/reservations', [ReservationControllers::class, 'add']);
+Route::post('/admin/reservations/delete/{id}', [ReservationControllers::class, 'delete']);
+Route::post('/admin/reservations/{id}', [ReservationControllers::class, 'update']);
+
+Route::post('reservation', [ReservationControllers::class, 'newReservation']);
+
+
+// GESTION DES CLIENTS (BACK OFFICE) // yes !
+Route::get('/admin/clients', [ClientsControllers::class, 'index'])->name('clients');
+Route::post('/admin/clients', [ClientsControllers::class, 'add']);
+Route::post('/admin/clients/delete/{id}', [ClientsControllers::class, 'delete']);
+Route::post('/admin/clients/{id}', [ClientsControllers::class, 'update']);
+
+
+// PAGE CONNEXION
+Route::get('/connexion', [AuthentificationController::class, 'indexConnexion'])->name('connexion');
+Route::post('/connexion', [AuthentificationController::class, 'connexion']);
+
+//LOGOUT 
+Route::get('/logout', [AuthentificationController::class, 'logout']);
 
 // PAGE D'INSCRIPTION
-
-Route::get('/registration',[ViewControllers::class, 'registration'] );
-
-// ESPACE PERSONNEL
-Route::get('/account',[ViewControllers::class, 'account'] );
-
-// MENTIONS LEGALES
-Route::get('/legal',[ViewControllers::class, 'legal'] );
+Route::get('/inscription', [AuthentificationController::class, 'index']);
+Route::post('/inscription', [AuthentificationController::class, 'inscription']);
 
 
-                //           BACK OFFICE            //
+// ESPACE PERSONNEL no
+Route::get('/account', [ViewControllers::class, 'account']);
 
-
-    // GESTION DES UTILISATEURS //
-
-Route::get('/admin/users',[AdminControllers::class, 'users'] );
-
-// CREATE
-Route::get('/admin/users/create', function () {
-    return view('users/create');
-});
-Route::get('/admin/users/create',[AdminControllers::class, 'usersCreate'] );
-
-//READ
-Route::get('/admin/users/read',[AdminControllers::class, 'usersRead'] );
-
-//UPDATE
-Route::get('/admin/users/update',[AdminControllers::class, 'usersUpdate'] );
-
-//DELETE
-Route::get('/admin/users/delete',[AdminControllers::class, 'usersDelete'] );
-
-
-    // GESTION DES RESERVATIONS //
-
-Route::get('/admin/reservation',[AdminControllers::class, 'reservation'] );
-
-// CREATE
-Route::get('/admin/reservation/create',[AdminControllers::class, 'reservationCreate'] );
-
-// READ
-Route::get('/admin/reservation/read',[AdminControllers::class, 'reservationRead'] );
-
-// UPDATE
-Route::get('/admin/reservation/update',[AdminControllers::class, 'reservationUpdate'] );
-
-// DELETE
-
-Route::get('/admin/reservation/delete',[AdminControllers::class, 'reservationDelete'] );
-
-    // GESTION DES PLATS DU JOUR //
-
-Route::get('/admin/dailyspecials',[DailyspecialsControllers::class, 'index'] );
+// MENTIONS LEGALES no
+Route::get('/legal', [ViewControllers::class, 'legal']);

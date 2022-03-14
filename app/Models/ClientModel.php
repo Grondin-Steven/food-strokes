@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DailyspecialsModel extends Model
+class ClientModel extends Model
 {
     use HasFactory;
-    protected $table = 'dailyspecials';
+    protected $table = 'clients';
     public $timestamps = false;
 
-    public function dailyspecials()
+    public function clients()
     {
-        return $this->belongsTo(DailyspecialsModel::class);
+        return $this->belongsTo(ClientModel::class);
     }
 }

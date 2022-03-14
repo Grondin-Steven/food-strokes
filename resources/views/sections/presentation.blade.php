@@ -65,9 +65,9 @@
             </a>
             <!-- Fin du logo SVG -->
 <!-- Texte présentation du restaurant -->
-            <p data-aos="fade-up" data-aos-duration="1000" class="text-center title-presentation-restau">VOTRE
+            <p data-aos="zoom-in" data-aos-duration="1200" class="text-center title-presentation-restau">VOTRE
                 RESTAURANT BELGIQUE <br> DEPUIS 1995</p>
-            <hr data-aos="fade-up" data-aos-duration="1000" class="divider">
+            <hr data-aos="fade-up" data-aos-duration="1200" class="divider">
             <p data-aos="fade-up" data-aos-duration="1500" class="text-center">Lorem ipsum dolor sit amet,
                 consetetur sadipscing elitr, sed diam nonumy eirmod <br> tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero <br> eos et accusam et justo duo dolores et ea rebum. <br>
